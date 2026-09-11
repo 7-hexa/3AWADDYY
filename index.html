@@ -1,0 +1,305 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>3AWADDYY | Official Hub</title>
+    
+    <!-- أيقونة المتصفح (Favicon) مع كسر كاش المتصفح -->
+    <link rel="icon" type="image/png" href="assets/favicon.png?v=2">
+    <link rel="shortcut icon" href="assets/favicon.png?v=2" type="image/x-icon">
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="css/style.css">
+    
+    <!-- Fonts & Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;900&family=Orbitron:wght@500;700;900&family=Permanent+Marker&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <!-- Background Video Container -->
+    <div class="video-bg-container">
+        <!-- مكان فيديو الخلفية -->
+        <video autoplay loop muted playsinline id="bg-video">
+            <source src="assets/bg-video.mp4" type="video/mp4">
+        </video>
+        <div class="video-overlay"></div>
+    </div>
+
+    <!-- Main Wrapper -->
+    <div class="site-wrapper">
+
+        <!-- Top Header / Banner Section -->
+        <header class="hero-header">
+            
+            <!-- Left Side: Circular Avatar Section -->
+            <div class="hero-avatar-side">
+                <div class="avatar-ring">
+                    <!-- مكان صورة البروفايل -->
+                    <img src="assets/profile.jpg" alt="Profile Character" id="profile-img" onerror="this.src='https://via.placeholder.com/300/10002b/a855f7?text=Profile'">
+                </div>
+                <div class="online-status">
+                    <span class="status-dot"></span> Online
+                </div>
+            </div>
+
+            <!-- Center Text Area -->
+            <div class="hero-center-text">
+                <div class="crown-svg">
+                    <i class="fa-solid fa-crown"></i>
+                </div>
+                <h1 class="brand-title" id="display-name">3AWADDYY</h1>
+                <p class="subtitle" id="display-subtitle">GAMER &nbsp;•&nbsp; STREAMER &nbsp;•&nbsp; CONTENT CREATOR</p>
+                <div class="vibes-tag">Good Vibes Only <span class="mini-crown">👑</span></div>
+            </div>
+
+            <!-- Right Side Overlay Text -->
+            <div class="hero-right-side">
+                <div class="play-stream-text">
+                    Play<br>
+                    Stream<br>
+                    Enjoy
+                    <div class="text-crown">👑</div>
+                </div>
+            </div>
+
+        </header>
+
+        <!-- Links Grid Section (11 Cards) -->
+        <section class="links-grid">
+            
+            <!-- KICK -->
+            <a href="#" id="link-kick" target="_blank" class="card card-kick">
+                <div class="card-body">
+                    <div class="card-icon"><i class="fa-brands fa-kickstarter"></i></div>
+                    <div class="card-content">
+                        <h3>KICK</h3>
+                        <p>Follow me on Kick</p>
+                    </div>
+                    <div class="card-arrow">→</div>
+                </div>
+            </a>
+
+            <!-- YOUTUBE -->
+            <a href="#" id="link-youtube" target="_blank" class="card card-youtube">
+                <div class="card-body">
+                    <div class="card-icon"><i class="fa-brands fa-youtube"></i></div>
+                    <div class="card-content">
+                        <h3>YOUTUBE</h3>
+                        <p>Subscribe on YouTube</p>
+                    </div>
+                    <div class="card-arrow">→</div>
+                </div>
+            </a>
+
+            <!-- TIKTOK -->
+            <a href="#" id="link-tiktok" target="_blank" class="card card-tiktok">
+                <div class="card-body">
+                    <div class="card-icon"><i class="fa-brands fa-tiktok"></i></div>
+                    <div class="card-content">
+                        <h3>TIKTOK</h3>
+                        <p>Follow me on TikTok</p>
+                    </div>
+                    <div class="card-arrow">→</div>
+                </div>
+            </a>
+
+            <!-- INSTAGRAM -->
+            <a href="#" id="link-instagram" target="_blank" class="card card-instagram">
+                <div class="card-body">
+                    <div class="card-icon"><i class="fa-brands fa-instagram"></i></div>
+                    <div class="card-content">
+                        <h3>INSTAGRAM</h3>
+                        <p>Follow me on instagram</p>
+                    </div>
+                    <div class="card-arrow">→</div>
+                </div>
+            </a>
+
+            <!-- DONATION -->
+            <a href="#" id="link-donation" target="_blank" class="card card-donation">
+                <div class="card-body">
+                    <div class="card-icon"><i class="fa-solid fa-hand-holding-heart"></i></div>
+                    <div class="card-content">
+                        <h3>DONATION</h3>
+                        <p>Support the stream</p>
+                    </div>
+                    <div class="card-arrow">→</div>
+                </div>
+            </a>
+
+            <!-- DISCORD -->
+            <a href="#" id="link-discord" target="_blank" class="card card-discord">
+                <div class="card-body">
+                    <div class="card-icon"><i class="fa-brands fa-discord"></i></div>
+                    <div class="card-content">
+                        <h3>DISCORD</h3>
+                        <p>Join my server</p>
+                    </div>
+                    <div class="card-arrow">→</div>
+                </div>
+            </a>
+
+            <!-- WHATSAPP -->
+            <a href="#" id="link-whatsapp" target="_blank" class="card card-whatsapp">
+                <div class="card-body">
+                    <div class="card-icon"><i class="fa-brands fa-whatsapp"></i></div>
+                    <div class="card-content">
+                        <h3>WHATSAPP</h3>
+                        <p>Join my channel</p>
+                    </div>
+                    <div class="card-arrow">→</div>
+                </div>
+            </a>
+
+            <!-- TWITCH -->
+            <a href="#" id="link-twitch" target="_blank" class="card card-twitch">
+                <div class="card-body">
+                    <div class="card-icon"><i class="fa-brands fa-twitch"></i></div>
+                    <div class="card-content">
+                        <h3>TWITCH</h3>
+                        <p>Follow me on Twitch</p>
+                    </div>
+                    <div class="card-arrow">→</div>
+                </div>
+            </a>
+
+            <!-- X (TWITTER) -->
+            <a href="#" id="link-x" target="_blank" class="card card-x">
+                <div class="card-body">
+                    <div class="card-icon"><i class="fa-brands fa-x-twitter"></i></div>
+                    <div class="card-content">
+                        <h3>X (Twitter)</h3>
+                        <p>Follow me on X</p>
+                    </div>
+                    <div class="card-arrow">→</div>
+                </div>
+            </a>
+
+            <!-- FACEBOOK -->
+            <a href="#" id="link-facebook" target="_blank" class="card card-facebook">
+                <div class="card-body">
+                    <div class="card-icon"><i class="fa-brands fa-facebook-f"></i></div>
+                    <div class="card-content">
+                        <h3>FACEBOOK</h3>
+                        <p>Follow me on Facebook</p>
+                    </div>
+                    <div class="card-arrow">→</div>
+                </div>
+            </a>
+
+            <!-- SPOTIFY -->
+            <a href="#" id="link-spotify" target="_blank" class="card card-spotify">
+                <div class="card-body">
+                    <div class="card-icon"><i class="fa-brands fa-spotify"></i></div>
+                    <div class="card-content">
+                        <h3>SPOTIFY</h3>
+                        <p>Listen to my playlist</p>
+                    </div>
+                    <div class="card-arrow">→</div>
+                </div>
+            </a>
+
+        </section>
+
+        <!-- Middle Bottom Dashboard Row -->
+        <section class="dashboard-row">
+            
+            <!-- Modern Glassmorphism Music Player -->
+            <div class="dash-box glass-player">
+                <div class="player-top">
+                    <div class="album-art">
+                        <i class="fa-solid fa-music"></i>
+                    </div>
+                    <div class="track-details">
+                        <h4 id="song-title">Music Vibes</h4>
+                        <p id="song-artist">Good music. Better mood.</p>
+                    </div>
+                    <div class="spotify-badge">
+                        <i class="fa-brands fa-spotify"></i>
+                    </div>
+                </div>
+
+                <!-- Equalizer Wave -->
+                <div class="sound-wave-container" id="visualizer">
+                    <span></span><span></span><span></span><span></span><span></span>
+                    <span></span><span></span><span></span><span></span><span></span>
+                    <span></span><span></span><span></span><span></span><span></span>
+                </div>
+
+                <div class="player-bottom">
+                    <div class="controls-group">
+                        <button class="btn-ctrl" id="prev-btn" title="Previous"><i class="fa-solid fa-backward-step"></i></button>
+                        <button class="btn-play-main play-trigger" id="play-btn" title="Play/Pause">
+                            <i class="fa-solid fa-play" id="play-icon"></i>
+                        </button>
+                        <button class="btn-ctrl" id="next-btn" title="Next"><i class="fa-solid fa-forward-step"></i></button>
+                    </div>
+
+                    <div class="volume-container">
+                        <i class="fa-solid fa-volume-high vol-icon"></i>
+                        <input type="range" class="vol-slider" id="volume-slider" min="0" max="1" step="0.01" value="0.8">
+                    </div>
+
+                    <button class="btn-heart" id="like-btn"><i class="fa-solid fa-heart"></i></button>
+                </div>
+
+                <!-- مكان مقطع الصوت -->
+                <audio id="audio-player" src="assets/audio.mp3" preload="metadata"></audio>
+            </div>
+
+            <!-- Center Logo Tagline Box -->
+            <div class="dash-box center-brand-box">
+                <div class="crown-mini"><i class="fa-solid fa-crown"></i></div>
+                <h2>3AWADDYY</h2>
+                <p>DREAM &nbsp;×&nbsp; PLAY &nbsp;×&nbsp; STREAM &nbsp;×&nbsp; REPEAT</p>
+            </div>
+
+            <!-- Clock Widget Box -->
+            <div class="dash-box clock-box">
+                <div class="clock-icon"><i class="fa-regular fa-clock"></i></div>
+                <div class="clock-content">
+                    <div class="time-text"><span id="clock-time">21:15</span><small id="clock-sec">:32</small></div>
+                    <div class="date-text" id="clock-date">Saturday, Aug 30, 2025</div>
+                </div>
+            </div>
+
+            <!-- Right Thank You Text -->
+            <div class="thank-you-tag">
+                Thank you<br>for being here
+                <div class="ty-crown">👑</div>
+            </div>
+
+        </section>
+
+        <!-- Bottom Footer Bar -->
+        <footer class="footer-bar">
+            <div class="footer-logo">
+                <i class="fa-solid fa-crown"></i>
+                <span>3AWADDYY</span>
+            </div>
+
+            <div class="footer-nav">
+                Dream &nbsp;×&nbsp; Play &nbsp;×&nbsp; Stream &nbsp;×&nbsp; Repeat
+            </div>
+
+            <div class="footer-socials">
+                <a href="#" id="foot-kick"><i class="fa-brands fa-kickstarter"></i></a>
+                <a href="#" id="foot-youtube"><i class="fa-brands fa-youtube"></i></a>
+                <a href="#" id="foot-tiktok"><i class="fa-brands fa-tiktok"></i></a>
+                <a href="#" id="foot-instagram"><i class="fa-brands fa-instagram"></i></a>
+                <a href="#" id="foot-discord"><i class="fa-brands fa-discord"></i></a>
+                <a href="#" id="foot-x"><i class="fa-brands fa-x-twitter"></i></a>
+                <a href="#" id="foot-facebook"><i class="fa-brands fa-facebook-f"></i></a>
+                <a href="#" id="foot-spotify"><i class="fa-brands fa-spotify"></i></a>
+            </div>
+        </footer>
+
+    </div>
+
+    <!-- Scripts -->
+    <script src="js/config.js"></script>
+    <script src="js/app.js"></script>
+</body>
+</html>
