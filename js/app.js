@@ -54,7 +54,7 @@ document.addEventListener("DOMContentLoaded", () => {
         } catch (error) {
             status.classList.remove('is-loading', 'is-live');
             status.classList.add('is-offline');
-            label.textContent = 'Status unavailable';
+            label.textContent = 'OFFLINE';
             if (liveBadge) liveBadge.hidden = true;
         }
     }
