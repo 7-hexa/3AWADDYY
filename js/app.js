@@ -72,7 +72,8 @@ document.addEventListener("DOMContentLoaded", () => {
         
         document.getElementById('clock-time').textContent = `${hours}:${minutes}`;
         document.getElementById('clock-sec').textContent = `:${seconds}`;
-        document.getElementById('clock-period').textContent = period;
+        const periodElement = document.getElementById('clock-period');
+        if (periodElement) periodElement.textContent = period;
         document.getElementById('clock-date').textContent = now.toLocaleDateString('en-US', dateOptions);
     }
     setInterval(updateClock, 1000);
