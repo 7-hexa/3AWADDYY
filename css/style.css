@@ -545,6 +545,12 @@ appearance: none;
     color: #c084fc;
 }
 
+.time-text #clock-period {
+    margin-left: 5px;
+    font-size: 0.78rem;
+    letter-spacing: 0.04em;
+}
+
 .date-text {
     font-size: 0.75rem;
     color: #a1a1aa;

@@ -62,14 +62,17 @@ document.addEventListener("DOMContentLoaded", () => {
     // 2. Live Digital Clock
     function updateClock() {
         const now = new Date();
-        const hours = String(now.getHours()).padStart(2, '0');
+        const hourValue = now.getHours();
+        const hours = String(hourValue % 12 || 12).padStart(2, '0');
         const minutes = String(now.getMinutes()).padStart(2, '0');
         const seconds = String(now.getSeconds()).padStart(2, '0');
+        const period = hourValue >= 12 ? 'PM' : 'AM';
         
         const dateOptions = { weekday: 'long', month: 'short', day: 'numeric', year: 'numeric' };
         
         document.getElementById('clock-time').textContent = `${hours}:${minutes}`;
         document.getElementById('clock-sec').textContent = `:${seconds}`;
+        document.getElementById('clock-period').textContent = period;
         document.getElementById('clock-date').textContent = now.toLocaleDateString('en-US', dateOptions);
     }
     setInterval(updateClock, 1000);
