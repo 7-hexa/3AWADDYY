@@ -31,12 +31,21 @@ document.addEventListener("DOMContentLoaded", () => {
         if (!status || !label) return;
 
         try {
-            const response = await fetch(`https://kick.com/api/v2/channels/${encodeURIComponent(username)}`, {
-                headers: { Accept: 'application/json' }
+            const kickUrl = `https://kick.com/api/v2/channels/${encodeURIComponent(username)}`;
+            const proxyUrl = `https://r.jina.ai/http://kick.com/api/v2/channels/${encodeURIComponent(username)}`;
+            const controller = new AbortController();
+            const timeout = setTimeout(() => controller.abort(), 8000);
+            const response = await fetch(proxyUrl, {
+                headers: { Accept: 'application/json' },
+                signal: controller.signal
             });
+            clearTimeout(timeout);
             if (!response.ok) throw new Error('Kick status unavailable');
 
-            const channel = await response.json();
+            const responseText = await response.text();
+            const jsonMatch = responseText.match(/Markdown Content:\s*([\s\S]*)$/);
+            if (!jsonMatch) throw new Error('Kick response unavailable');
+            const channel = JSON.parse(jsonMatch[1].trim());
             const isLive = Boolean(channel?.livestream);
             status.classList.remove('is-loading', 'is-live', 'is-offline');
             status.classList.add(isLive ? 'is-live' : 'is-offline');
@@ -45,7 +54,7 @@ document.addEventListener("DOMContentLoaded", () => {
         } catch (error) {
             status.classList.remove('is-loading', 'is-live');
             status.classList.add('is-offline');
-            label.textContent = 'Offline';
+            label.textContent = 'Status unavailable';
             if (liveBadge) liveBadge.hidden = true;
         }
     }
