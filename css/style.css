@@ -100,7 +100,15 @@ body {
     gap: 8px;
     backdrop-filter: blur(8px);
     box-shadow: 0 0 15px rgba(34, 197, 94, 0.2);
+    transition: color 0.2s ease, border-color 0.2s ease, box-shadow 0.2s ease;
 }
+
+.online-status.is-offline { border-color: rgba(161, 161, 170, 0.45); color: #d4d4d8; box-shadow: none; }
+.online-status.is-offline .status-dot { background-color: #71717a; box-shadow: none; }
+.online-status.is-loading { border-color: rgba(168, 85, 247, 0.5); color: #d8b4fe; }
+.online-status.is-loading .status-dot { background-color: #a855f7; box-shadow: 0 0 8px #a855f7; animation: statusPulse 1s infinite alternate; }
+
+@keyframes statusPulse { to { opacity: 0.45; transform: scale(0.75); } }
 
 .status-dot {
     width: 10px;
@@ -223,6 +231,20 @@ body {
     font-size: 0.85rem;
     color: #71717a;
     transition: transform 0.3s ease, color 0.3s ease;
+}
+
+.live-badge {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    padding: 4px 7px;
+    border-radius: 999px;
+    background: #ef4444;
+    color: #fff;
+    font-size: 0.58rem;
+    font-weight: 900;
+    letter-spacing: 0.08em;
+    box-shadow: 0 0 12px rgba(239, 68, 68, 0.65);
 }
 
 .card:hover {
@@ -588,7 +610,32 @@ appearance: none;
 }
 
 @media (max-width: 768px) {
+    .site-wrapper { padding: 20px 14px 28px; gap: 22px; }
+    .hero-header { padding-top: 8px; }
+    .avatar-ring { width: 150px; height: 150px; }
+    .brand-title { font-size: clamp(2.25rem, 12vw, 4rem); letter-spacing: 1px; }
+    .subtitle { max-width: 90vw; font-size: 0.68rem; letter-spacing: 2px; line-height: 1.6; }
+    .vibes-tag { font-size: 1.25rem; }
+    .play-stream-text { display: none; }
     .links-grid { grid-template-columns: 1fr 1fr; }
+    .card { min-height: 142px; padding: 18px 10px; }
+    .card-icon { font-size: 1.9rem; }
+    .card-content h3 { font-size: 0.78rem; }
+    .card-content p { font-size: 0.65rem; line-height: 1.4; }
+    .card-arrow { bottom: 8px; right: 9px; }
     .dashboard-row { grid-template-columns: 1fr; }
+    .dash-box { padding: 16px; }
+    .player-bottom { flex-wrap: wrap; }
+    .volume-container { order: 3; flex-basis: 100%; max-width: none; }
+    .center-brand-box p { font-size: 0.56rem; letter-spacing: 1px; }
+    .clock-box { justify-content: center; }
     .footer-bar { flex-direction: column; gap: 15px; text-align: center; }
+    .footer-nav { font-size: 0.65rem; letter-spacing: 1px; }
+}
+
+@media (max-width: 430px) {
+    .links-grid { gap: 10px; }
+    .card { min-height: 132px; }
+    .card-icon { font-size: 1.65rem; }
+    .live-badge { font-size: 0.5rem; }
 }

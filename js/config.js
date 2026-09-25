@@ -1,6 +1,7 @@
 const CONFIG = {
     displayName: "3AWADDYY",
     subtitle: "GAMER • STREAMER • CONTENT CREATOR",
+    kickUsername: "3awaddyy",
     
     // روابط السوشيال ميديا
     links: {

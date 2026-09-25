@@ -39,8 +39,9 @@
                     <!-- مكان صورة البروفايل -->
                     <img src="assets/profile.jpg" alt="Profile Character" id="profile-img" onerror="this.src='https://via.placeholder.com/300/10002b/a855f7?text=Profile'">
                 </div>
-                <div class="online-status">
-                    <span class="status-dot"></span> Online
+                <div class="online-status is-loading" id="stream-status" aria-live="polite">
+                    <span class="status-dot"></span>
+                    <span id="stream-status-label">Checking Kick...</span>
                 </div>
             </div>
 
@@ -79,6 +80,7 @@
                     </div>
                     <div class="card-arrow">→</div>
                 </div>
+                <span class="live-badge" id="kick-live-badge" hidden>LIVE NOW</span>
             </a>
 
             <!-- YOUTUBE -->

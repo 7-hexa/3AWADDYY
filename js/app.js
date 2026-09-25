@@ -20,6 +20,34 @@ document.addEventListener("DOMContentLoaded", () => {
             document.getElementById('song-artist').textContent = CONFIG.audio.artist;
             document.getElementById('audio-player').src = CONFIG.audio.src;
         }
+
+        updateKickStatus(CONFIG.kickUsername || '3awaddyy');
+    }
+
+    async function updateKickStatus(username) {
+        const status = document.getElementById('stream-status');
+        const label = document.getElementById('stream-status-label');
+        const liveBadge = document.getElementById('kick-live-badge');
+        if (!status || !label) return;
+
+        try {
+            const response = await fetch(`https://kick.com/api/v2/channels/${encodeURIComponent(username)}`, {
+                headers: { Accept: 'application/json' }
+            });
+            if (!response.ok) throw new Error('Kick status unavailable');
+
+            const channel = await response.json();
+            const isLive = Boolean(channel?.livestream);
+            status.classList.remove('is-loading', 'is-live', 'is-offline');
+            status.classList.add(isLive ? 'is-live' : 'is-offline');
+            label.textContent = isLive ? 'Live on Kick' : 'Offline';
+            if (liveBadge) liveBadge.hidden = !isLive;
+        } catch (error) {
+            status.classList.remove('is-loading', 'is-live');
+            status.classList.add('is-offline');
+            label.textContent = 'Offline';
+            if (liveBadge) liveBadge.hidden = true;
+        }
     }
 
     // 2. Live Digital Clock
