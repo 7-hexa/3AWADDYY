@@ -49,7 +49,7 @@ document.addEventListener("DOMContentLoaded", () => {
             const isLive = Boolean(channel?.livestream);
             status.classList.remove('is-loading', 'is-live', 'is-offline');
             status.classList.add(isLive ? 'is-live' : 'is-offline');
-            label.textContent = isLive ? 'Live on Kick' : 'Offline';
+            label.textContent = isLive ? 'ONLINE' : 'OFFLINE';
             if (liveBadge) liveBadge.hidden = !isLive;
         } catch (error) {
             status.classList.remove('is-loading', 'is-live');
